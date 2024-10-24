@@ -1,0 +1,48 @@
+/* SignupLogin.css */
+
+.form_container {
+    background-color: #18191a; /* Dark background */
+    color: white; /* Text color */
+    max-width: 600px; /* Make form wider */
+    margin: 0 auto; /* Center the form */
+    padding: 20px; /* Add some padding */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: add shadow */
+    overflow: hidden; /* Prevent scrollbar */
+}
+
+h2 {
+    text-align: center; /* Center the heading */
+}
+
+input {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin: 10px 0; /* Spacing between inputs */
+    border: 1px solid #444; /* Border color */
+    border-radius: 5px; /* Rounded corners for inputs */
+    background-color: #282c34; /* Dark input background */
+    color: white; /* Input text color */
+}
+
+button {
+    width: 100%; /* Full width for button */
+    padding: 10px; /* Padding inside button */
+    margin-top: 10px; /* Spacing above button */
+    background-color: #007bff; /* Button background color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for button */
+    color: white; /* Button text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+
+span {
+    display: block; /* Make span a block element */
+    text-align: center; /* Center the span text */
+    margin-top: 10px; /* Spacing above the span */
+}

@@ -1,0 +1,104 @@
+/* General Styles */
+html, body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #121212; /* Darker background for better contrast */
+    color: #E0E0E0; /* Light gray text for improved readability */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif; /* Body font */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Container Styles */
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: rgba(37, 36, 36, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Title Styles */
+.title {
+    font-family: 'Montserrat', sans-serif; /* Heading font */
+    font-size: 3rem; /* Increased font size */
+    font-weight: 700; /* Bold weight for emphasis */
+    margin-bottom: 40px;
+    color: #cfc5db; /* A soft purple color for better readability */
+    letter-spacing: 3px; /* Increased letter spacing */
+    line-height: 1.2; /* Improved line height */
+    text-transform: uppercase;
+}
+
+/* Button Box Styles */
+.btn-box {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+    margin-top: 20px; /* Adds space above the button container */
+}
+
+.btn-box button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    background-color: #333;
+    color: #E0E0E0; /* Light gray text for buttons */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-box button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn-box button a {
+    color: #E0E0E0; /* Consistent text color */
+    text-decoration: none;
+}
+
+.btn-box button:active {
+    transform: scale(1.02);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 2.5rem; /* Adjusted for smaller screens */
+    }
+
+    .btn-box button {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 2rem; /* Further reduced for small screens */
+    }
+
+    .btn-box button {
+        width: 100%;
+        padding: 10px;
+    }
+}
