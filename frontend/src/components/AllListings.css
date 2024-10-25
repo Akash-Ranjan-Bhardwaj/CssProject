@@ -106,3 +106,122 @@
   margin-left: 10px;
   cursor: pointer;
 }
+.download-button {
+  padding: 10px 20px;
+  background-color: #2d2d2d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #444;
+}
+/* Prevent horizontal scrolling */
+.students-container {
+  padding: 20px;
+  text-align: center;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Style for the scrollbar */
+.students-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: 600px; /* Set a max height for the scroll area */
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+.students-list::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+.students-list::-webkit-scrollbar-thumb {
+  background: #444; /* Color of the scrollbar handle */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.students-list::-webkit-scrollbar-thumb:hover {
+  background: #666; /* Color of the scrollbar handle on hover */
+}
+
+.students-list::-webkit-scrollbar-track {
+  background: #1f2228; /* Background of the scrollbar track */
+}
+
+/* For Firefox */
+.students-list {
+  scrollbar-width: thin; /* Make scrollbar thin */
+  scrollbar-color: #444 #1f2228; /* Handle and track color */
+}
+
+/* Add styles for the student list items, download button, etc., if not already included */
+.student-list-item {
+  background-color: #1f2228;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  transition: transform 0.2s;
+  flex: 0 1 calc(25% - 20px);
+  max-width: 300px;
+}
+
+.student-list-item:hover {
+  transform: scale(1.02);
+}
+
+.student-list-title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.student-list-info {
+  margin: 5px 0;
+}
+
+.delete-button {
+  background-color: #302d2d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #080707;
+}
+
+.download-button {
+  padding: 10px 20px;
+  background-color: #2d2d2d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #444;
+}
+/* For Chrome, Safari, and Edge */
+.students-list::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+
+/* For Firefox */
+.students-list::-moz-scrollbar-thumb {
+  background-color: black;
+}
