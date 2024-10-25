@@ -174,3 +174,26 @@ input:focus {
 .modal-content button:hover {
   background-color: #0056b3; /* Darker blue on hover */
 }
+/* Form container and modal styles from your code above */
+
+.dropdown-select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: #f0f0f0;
+  font-size: 1rem;
+}
+
+.dropdown-select:focus {
+  outline: none;
+  border: 2px solid #888;
+  background-color: #555;
+}
+
+.dropdown-select option {
+  background-color: #333;
+  color: #f0f0f0;
+}

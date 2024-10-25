@@ -69,3 +69,40 @@
 .delete-button:hover {
   background-color: #080707; /* Darker red on hover */
 }
+.filter-label {
+  font-size: 1rem;
+  color: #d3d3d3;
+  margin-right: 10px;
+}
+
+.filter-dropdown {
+  padding: 8px;
+  background-color: #333;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.filter-dropdown:focus {
+  outline: none;
+  border: 2px solid #5e5ce6; /* Highlighted border on focus */
+}
+.filter-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.domain-select {
+  padding: 10px;
+  background-color: #2d2d2d;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}

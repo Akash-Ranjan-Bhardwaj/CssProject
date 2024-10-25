@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './AllListings.css'; // Import CSS for styling
+import './AllListings.css';
 
 function AllListings() {
-  const [students, setStudents] = useState([]);  // State to hold the fetched data
-  const [loading, setLoading] = useState(true);  // Loading state
-  const [error, setError] = useState(null);      // Error state
+  const [students, setStudents] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [filterDomain, setFilterDomain] = useState('');  // State for filtering domain
 
   useEffect(() => {
     const fetchStudents = async () => {
@@ -18,14 +19,12 @@ function AllListings() {
         setLoading(false);
       }
     };
-
     fetchStudents();
   }, []);
 
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/api/students/${id}`);
-      // Remove the deleted student from the state
       setStudents(students.filter(student => student._id !== id));
     } catch (error) {
       console.error('Failed to delete student:', error);
@@ -33,19 +32,39 @@ function AllListings() {
     }
   };
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  const handleDomainChange = (e) => {
+    setFilterDomain(e.target.value);
+  };
 
-  if (error) {
-    return <p>{error}</p>;
-  }
+  const filteredStudents = filterDomain
+    ? students.filter(student => student.domain === filterDomain)
+    : students;
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <div className="students-container">
       <h1 className="students-title">All Students Listings</h1>
+
+      <div className="filter-container">
+        <label htmlFor="domain-filter">Filter by Domain:</label>
+        <select
+          id="domain-filter"
+          value={filterDomain}
+          onChange={handleDomainChange}
+          className="domain-select"
+        >
+          <option value="">All</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Event Management">Event Management</option>
+          <option value="Content Writing">Content Writing</option>
+          <option value="Graphics Designing">Graphics Designing</option>
+        </select>
+      </div>
+
       <ul className="students-list">
-        {students.map((student) => (
+        {filteredStudents.map((student) => (
           <li key={student._id} className="student-list-item">
             <h2 className="student-list-title">{student.name}</h2>
             <p className="student-list-info">Domain: {student.domain}</p>

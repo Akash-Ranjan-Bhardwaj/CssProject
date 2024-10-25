@@ -9,8 +9,8 @@ function Form() {
     email: ''
   });
   
-  const [message, setMessage] = useState('');  // To store success/error message
-  const [isModalOpen, setIsModalOpen] = useState(false);  // To control modal visibility
+  const [message, setMessage] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,21 +20,19 @@ function Form() {
     });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     try {
       const response = await axios.post('http://localhost:3000/api/students', formData);
-      setMessage(response.data.message);  // Set success message
-      setIsModalOpen(true);  // Open modal
+      setMessage(response.data.message);
+      setIsModalOpen(true);
     } catch (error) {
       setMessage('Error: ' + (error.response?.data?.error || 'Something went wrong!'));
-      setIsModalOpen(true);  // Open modal
+      setIsModalOpen(true);
     }
   };
 
-  // Close the modal
   const closeModal = () => {
     setIsModalOpen(false);
   };
@@ -56,15 +54,20 @@ function Form() {
         />
 
         <label htmlFor="domain">Domain</label>
-        <input
-          type="text"
+        <select
           id="domain"
           name="domain"
           value={formData.domain}
           onChange={handleChange}
-          placeholder="Enter your domain"
           required
-        />
+          className="dropdown-select"
+        >
+          <option value="">Select your domain</option>
+          <option value="Event Management">Event Management</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Graphic Design">Graphic Design</option>
+          <option value="Content Writing">Content Writing</option>
+        </select>
 
         <label htmlFor="email">Email</label>
         <input
@@ -80,7 +83,6 @@ function Form() {
         <button type="submit" className="submit-btn">Submit</button>
       </form>
 
-      {/* Modal component */}
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
