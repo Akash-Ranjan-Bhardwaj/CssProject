@@ -45,10 +45,8 @@ app.post('/signup', async (req, res, next) => {
 
     // Set the cookie properly
     res.cookie("token", token, {
-      httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
-      secure: process.env.NODE_ENV === 'production', // In production, cookie should only be sent over HTTPS
-      sameSite: 'None',  // Ensures the cookie is sent for cross-site requests
-      // You might need 'lax' instead of 'None' depending on your setup
+      withCredentials: true,
+      httpOnly: false,
     });
 
     res.status(201).json({
@@ -96,7 +94,7 @@ app.post('/login', async (req, res, next) => {
 });
 
 
-app.get('/api/protected', userVerification, (req, res) => {
+app.post('/api/protected', userVerification, (req, res) => {
   // Access the user information from the decoded token
   const user = req.user;
 

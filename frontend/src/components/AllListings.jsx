@@ -41,21 +41,7 @@ function AllListings() {
     ? students.filter(student => student.domain === filterDomain)
     : students;
 
-  // const downloadPDF = () => {
-  //   const doc = new jsPDF();
-  //   doc.setFontSize(18);
-  //   doc.text('Filtered Student List', 20, 20);
-  //   doc.setFontSize(12);
-
-  //   filteredStudents.forEach((student, index) => {
-  //     const yPosition = 30 + index * 10;
-  //     doc.text(`Name: ${student.name}`, 20, yPosition);
-  //     doc.text(`Domain: ${student.domain}`, 90, yPosition);
-  //     doc.text(`Email: ${student.email}`, 150, yPosition);
-  //   });
-
-  //   doc.save('filtered_students.pdf');
-  // };
+ 
   const downloadPDF = () => {
     const doc = new jsPDF();
     doc.setFontSize(12); // Adjust font size for better line fitting
